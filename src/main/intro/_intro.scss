@@ -1,0 +1,81 @@
+#intro {
+    width:1180px;  box-sizing:border-box; 
+    margin:0px auto ; position:relative; background-image:url("../img/introbg1.jpg");background-repeat: no-repeat; background-position: center;
+    
+   //border:1px solid #000;
+    dl {
+        div{    
+            margin-left: 50px; 
+            dt {
+                height:calc(100% / 3 ); width:50px; position:absolute;left: 0px;
+                &:nth-of-type(1) {
+                    bottom:calc( (100%/ 3)* 2) ;
+                }
+                &:nth-of-type(2) {
+                    bottom:calc( (100%/ 3)* 1) ;
+                }
+                &:nth-of-type(3) {
+                    bottom:calc( (100%/ 3)* 0) ;
+                }
+                a {
+                    display:block; width:100%; height:100%; 
+                    //background:rgba(0, 0, 0, 0.3); 
+                    color:white; font:bold 16px/40px 
+                    'arial'; text-align:center;
+                    &.on {
+                        background:rgba(167, 176, 116, 0.5); 
+                    }
+                }
+            }
+            dd {
+               box-sizing:border-box; padding:40px; display:none; perspective: 700px; 
+                width: 100%;
+                clip-path: inset(0% 100% 0% 0%);
+                transition: all .5s ease-in-out;
+
+                &.on {
+                    display:block;
+                }
+                >p {
+                    margin: 0 auto;
+                    font:bold 15px/1.6 'Nunito'; color:#fff; margin-bottom:40px;opacity: 0;
+                }
+
+                >a {
+                    display:block; margin: 0 auto; width:120px; height:30px;border:1px solid #fff;
+                    font:15px/30px 'arial'; color:#fff; text-align:center;
+                    opacity: 0; transition: 0.5s 0.5s; 
+                }
+            &.on{
+                    background:rgba(167, 176, 116, 0.5);
+                   >p{opacity: 1;}
+                   >a{opacity: 1;}
+                clip-path: inset(0% 0% 0% 0%)
+            }
+            }
+        }
+    }   
+}
+
+
+//tablet 
+@media screen and (max-width:$tablet){
+    #intro {
+        width: 90%;
+        dl {
+            div
+                dd {
+                    >p {
+                        margin-bottom:30px;
+                    }
+                }
+        }   
+    }
+}
+
+//mobile 
+@media screen and (max-width:$mobile){
+    #intro{
+        margin: 50px auto 100px;        
+        }
+}

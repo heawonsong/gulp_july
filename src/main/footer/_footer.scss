@@ -1,0 +1,45 @@
+#footer {
+    width:100%; position: relative; padding: 0px 10px;
+    .inner {
+        width:1180px; margin:0px auto;padding:45px 0px 150px; border-top:1px solid #888;
+        &::after {content:''; display :block; clear:both;}
+        .foo-logo{
+            width:55%; float:left;
+            a{font: bold 32px/1 'arial'; color:#000; }
+        }
+        .foo-box {
+            width: 15%;  float:left; margin-bottom: 10px;
+            P.foo-tit { font:bold 14px/1.2 'arial'; color:#000; margin-bottom:10px;}            
+            p b{font:bold 14px/1.2 'arial'; color:#000; margin-bottom:10px;}
+            p.info{font: 14px/1.5 'arial'; color:#999; margin: 5px 0;}
+            p.copy{font: 11px/1.2 'arial'; color:#999; letter-spacing: 1px; float: left;
+            }
+        }
+        p.copy{font: 11px/1.2 'arial'; color:#999; letter-spacing: 1px; float: left;
+        }
+        select {width: 200px; height:28px; border:1px solid #777; background:transparent; color:#888; padding-left:10px;float:right;}
+    }
+}
+
+/* tablet */
+@media screen and (max-width:$tablet){
+    #footer{
+        .inner {
+            width:100%; 
+            .foo-logo{width:100%; }
+            .foo-box{
+                p.foo-tit , p.info{display: none;}
+            }
+            select {transform: translateY(24px);}
+        }
+    }
+}
+
+/* mobile */
+@media screen and (max-width:$mobile){
+    #footer{padding: 0px;
+        .inner  { width:90%;
+            select {float: left;transform: translateY(10px);}
+        }
+    }
+}

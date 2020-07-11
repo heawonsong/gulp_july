@@ -1,0 +1,115 @@
+#item {
+    width: 100%; padding: 50px 0px 50px;
+    .inner{
+        width: 1180px; margin: 0px auto; 
+        .wrap{
+            width: 100%;position: relative;
+            &::after {content: ' '; display: block; clear: both;}
+            .itemBox1{
+                width: 480px; float: left; margin-left: 110px; 
+                &::before{
+                    content:' '; display: block; width:140px; height:4px; background: black; float: left;margin-top: 20px; margin-left: -100px;
+                }
+                .pic{ 
+                    width: 100%; height: 290px;background-image: url(../img/trip_img1.png); margin-bottom: 15px; 
+                    background-repeat: no-repeat;background-size:cover; background-position: center;
+                    &::before{
+                        content:'Trip';  font: bold 24px/1 'arial'; color: black;float: left; position: absolute; top: 30px; left:25px;
+                        }
+                }
+            }
+            .itemBox2{
+                width: 480px; float: right; margin-left: 110px; 
+                
+                &::before{
+                    content:' '; display: block; width:140px; height:4px; background: black; float: left;margin-top: 20px; margin-left: -100px;
+                }
+                .pic{
+                    width: 100%; height: 290px; background-image: url(../img/lab_img.png); margin-bottom: 15px;
+                    background-repeat: no-repeat;background-size:cover; background-position: center;
+                    &::before{
+                        content:'Lab';  font: bold 24px/1 'arial'; color: black;float: right; position: absolute; top: 30px; right:520px;
+                    }
+                }
+            }
+            article{
+                h2{
+                    font:bold 20px/1 'Josefin Slab', serif,'arial'; color: #000; margin-bottom: 5px;
+                }
+                p {
+                    font:12px/1 'Open Sans', sans-serif,'arial'; color:#000;
+                }
+                .btn {
+                    display:block; width:100px; height:30px; border-radius:5px; border:1px solid #ccc; text-align:center; font:12px/30px 'arial'; color:#888; position:relative; float: right;
+                }
+            }
+        }
+    }
+}
+/* tablet */
+@media screen and (max-width:$tablet){
+    #item{padding: 27px 0px 50px;
+        .inner{
+            width:100%; 
+            .wrap{
+                width: 100%;
+                .itemBox1{ transition: 0.5s;
+                    margin-bottom: 10px;
+                } 
+                .itemBox2{ 
+                    float: left; transition: 0.5s;
+                    .pic{
+                        &::before{display: none;}
+                        &::after{
+                            content:'Lab';  font: bold 24px/1 'arial'; color: black;float: left; display: block; margin-top: 30px; margin-left:-125px
+                            ;} 
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* me */
+@media screen and (max-width:$me){
+    #item {
+        .inner {
+            .wrap {
+                margin:0px auto;
+                .itemBox1{
+                    width: 95%; margin-left: 5%;
+                    &::before{display: none;}
+                    .pic{
+                        &::before{display: none;}
+                    }
+                }
+                .itemBox2 {
+                    width: 95%; margin-left: 5%;
+                    &::before{display: none;}
+                    .pic{
+                        &::after{display: none;}
+                    }
+                }
+                article{
+                    p {margin-bottom: 5px;}
+                    .btn{float: left;}
+                }
+            }
+        }
+    }
+}
+
+/* mobile */
+@media screen and (max-width:$mobile){
+    #item {
+        padding: 0px 0px 40px; transition: 0.5s;
+        .inner {width:90%;
+            .wrap{
+                .itemBox1,.itemBox2 {
+                    margin-left: 0px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
